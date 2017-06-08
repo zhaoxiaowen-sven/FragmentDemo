@@ -1,3 +1,4 @@
+
 package com.example.sven.fragementdemo;
 
 import android.app.Fragment;
@@ -32,10 +33,11 @@ public class Fragment1 extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-//        return super.onCreateView(inflater, container, savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+            Bundle savedInstanceState) {
+        // return super.onCreateView(inflater, container, savedInstanceState);
         printLog("onCreateView...");
-//        return inflater.inflate(R.layout.fragment1, container, false);
+        // return inflater.inflate(R.layout.fragment1, container, false);
         View v = inflater.inflate(R.layout.fragment1, container, false);
         Button button = (Button) v.findViewById(R.id.jump2fragment2);
         button.setOnClickListener(new View.OnClickListener() {
@@ -47,18 +49,18 @@ public class Fragment1 extends Fragment {
         return v;
     }
 
-    public void jump2fragment2(){
+    public void jump2fragment2() {
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-//        fragment之间跳转时
-//        1.只采用replace 实例会被销毁 back键一次退出当前ctivity
-//        fragmentTransaction.replace(R.id.fragment_container,new Fragment2());
-//        fragmentTransaction.addToBackStack(null);
-//
-//        2.把当前事务的变化情况添加到回退栈,视图会被销毁但是实例还在(back 2次)
-//        fragmentTransaction.replace(R.id.fragment_container,new Fragment2());
-//        fragmentTransaction.addToBackStack(null);
-//
-//        3.采用hide方式 实例不会被销毁,视图也不会被销毁(back 2次)
+        // fragment之间跳转时
+        // 1.只采用replace 实例会被销毁 back键一次退出当前ctivity
+        // fragmentTransaction.replace(R.id.fragment_container,new Fragment2());
+        // fragmentTransaction.addToBackStack(null);
+        //
+        // 2.把当前事务的变化情况添加到回退栈,视图会被销毁但是实例还在(back 2次)
+        // fragmentTransaction.replace(R.id.fragment_container,new Fragment2());
+        // fragmentTransaction.addToBackStack(null);
+        //
+        // 3.采用hide方式 实例不会被销毁,视图也不会被销毁(back 2次)
         fragmentTransaction.hide(this);
         fragmentTransaction.add(R.id.fragment_container, new Fragment2());
         fragmentTransaction.addToBackStack(null);
@@ -113,7 +115,7 @@ public class Fragment1 extends Fragment {
         super.onDetach();
     }
 
-    private void printLog(String msg){
-        Log.i(TAG,msg);
+    private void printLog(String msg) {
+        Log.i(TAG, msg);
     }
 }
