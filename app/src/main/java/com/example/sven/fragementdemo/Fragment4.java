@@ -18,6 +18,10 @@ public class Fragment4 extends Fragment implements View.OnClickListener {
         this.mListener = mListener;
     }
 
+    public void printSth() {
+
+    }
+
     public interface Fragment4ClickListener {
         void onFragment4Click();
     }
@@ -41,9 +45,9 @@ public class Fragment4 extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        // if (getActivity() instanceof FragmentClickListener) {
-        // ((FragmentClickListener) getActivity()).onFragmentClick(this);
-        // }
-        mListener.onFragment4Click();
+        if (getActivity() instanceof FragmentClickListener) {
+            ((FragmentClickListener) getActivity()).onFragmentClick(this, v.getId(), "jump");
+        }
+        // mListener.onFragment4Click();
     }
 }
