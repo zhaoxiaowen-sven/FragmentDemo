@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "ActivityLife";
     private Fragment fragment = new Fragment1();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,18 +25,18 @@ public class MainActivity extends AppCompatActivity {
         // 2.获取FragmentTransaction
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         // 3.创建需要的Fragment
-//        Fragment fragment = new Fragment1();
+        // Fragment fragment = new Fragment1();
         // 4.动态添加fragment
         // 将创建的fragment添加到Activity布局文件中定义的占位符中（FrameLayout）
         fragmentTransaction.add(R.id.fragment_container, fragment, "fragment1").commit();
     }
 
-    public void getFragmentMessage(View view){
+    public void getFragmentMessage(View view) {
 
         printLog(fragment.getTag());
-//        Fragment fragment = getFragmentManager().findFragmentByTag("fragment1");
-//        printLog(fragment.toString());
-//        fragment.onResume();
+        // Fragment fragment = getFragmentManager().findFragmentByTag("fragment1");
+        // printLog(fragment.toString());
+        // fragment.onResume();
     }
 
     public void fragment1(View view) {
@@ -43,13 +44,12 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.fragment_container, new Fragment1())
                 .commit();
     }
-//
-//    public void fragment2(View view) {
-//        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-//        fragmentTransaction.replace(R.id.fragment_container, new Fragment2())
-//                .commit();
-//    }
-
+    //
+    // public void fragment2(View view) {
+    // FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+    // fragmentTransaction.replace(R.id.fragment_container, new Fragment2())
+    // .commit();
+    // }
 
     @Override
     protected void onStart() {
