@@ -45,11 +45,11 @@ public class MainActivity extends AppCompatActivity {
                 .commit();
     }
     //
-    // public void fragment2(View view) {
-    // FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-    // fragmentTransaction.replace(R.id.fragment_container, new Fragment2())
-    // .commit();
-    // }
+    public void fragment2(View view) {
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, new Fragment2())
+                .commit();
+    }
 
     @Override
     protected void onStart() {

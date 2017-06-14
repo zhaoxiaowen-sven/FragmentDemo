@@ -139,9 +139,11 @@ public class Main2Activity extends AppCompatActivity
         // mFt.replace(R.id.fragment_container2, new Fragment3());
         // mFt.addToBackStack(null);
         // mFt.commit();
-
+        // 2.先通过按钮repalce掉fragment3，再执行下面的方法，fragment实例还能查找到
+        // 但是去寻找fragment的视图元素会报错，原因是视图会直接被销毁而实例不会？
         Fragment fragment = mFragmentManager.findFragmentByTag("fragment3");
-        Log.i(TAG, "fragment3 is " + fragment);
+        View v2 = this.findViewById(R.id.jump2fragment4);
+        Log.i(TAG, "fragment3 is " + fragment + "view = " + v2.toString());
     }
 
     public void fragment4(View view) {
