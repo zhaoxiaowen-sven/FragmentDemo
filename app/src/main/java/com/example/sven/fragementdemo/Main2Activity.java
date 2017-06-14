@@ -153,5 +153,9 @@ public class Main2Activity extends AppCompatActivity
         mFt.addToBackStack(null);
         // 所有的操作必须commit后才生效
         mFt.commit();
+        // remove 之后不为空???
+        if (mFragment3 == null) {
+            Log.i(TAG, "mFragment3 is null");
+        }
     }
 }
