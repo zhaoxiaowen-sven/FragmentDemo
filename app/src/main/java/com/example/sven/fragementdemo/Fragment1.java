@@ -20,6 +20,9 @@ public class Fragment1 extends Fragment {
 
     private static final String TAG = "FragmentLife";
 
+    public void printSth() {
+        Log.i(TAG, "fragment3 printSth");
+    }
     @Override
     public void onAttach(Context context) {
         printLog("onAttach...");

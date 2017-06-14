@@ -1,7 +1,6 @@
 
 package com.example.sven.fragementdemo;
 
-import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -12,7 +11,7 @@ import android.view.View;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "ActivityLife";
-    private Fragment fragment = new Fragment1();
+    private Fragment1 fragment = new Fragment1();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void getFragmentMessage(View view) {
 
-        printLog(fragment.getTag());
+        // printLog(fragment.getTag());
+        fragment.printSth();
         // Fragment fragment = getFragmentManager().findFragmentByTag("fragment1");
         // printLog(fragment.toString());
         // fragment.onResume();

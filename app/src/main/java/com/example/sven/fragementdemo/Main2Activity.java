@@ -148,8 +148,10 @@ public class Main2Activity extends AppCompatActivity
 
     public void fragment4(View view) {
         mFt = mFragmentManager.beginTransaction();
-        mFt.replace(R.id.fragment_container2, new Fragment4());
+        // mFt.replace(R.id.fragment_container2, new Fragment4());
+        mFt.remove(mFragment3);
         mFt.addToBackStack(null);
+        // 所有的操作必须commit后才生效
         mFt.commit();
     }
 }
